@@ -1,0 +1,40 @@
+→ Copies the changes from a specific commit onto the current branch.
+
+Command:
+
+git cherry-pick <commit>
+
+Example:
+
+main:
+A → B
+
+feature:
+A → B → C
+
+You want only C on main.
+
+Switch to main, then:
+
+git cherry-pick C
+
+Result:
+
+main:
+A → B → C'
+
+C' contains the changes from C,
+but it is a new commit with a different hash.
+
+Important:
+→ cherry-pick copies a commit's changes.
+→ It does NOT move the original commit.
+→ The new commit gets a new hash.
+
+Useful when:
+→ You need one specific fix from another branch.
+→ You don't want to merge the entire branch.
+
+Mental model:
+
+cherry-pick = "Bring this ONE commit here."

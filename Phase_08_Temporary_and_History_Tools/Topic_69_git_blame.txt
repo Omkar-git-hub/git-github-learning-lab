@@ -1,0 +1,40 @@
+→ Shows which commit and author last changed each line of a file.
+
+Command:
+
+git blame <file>
+
+Example:
+
+git blame app.py
+
+Output includes information such as:
+
+→ Commit hash
+→ Author
+→ Date
+→ Line content
+
+Useful when:
+
+→ You want to know who introduced a change.
+→ You need to find the commit responsible for a line.
+→ You want to investigate the history of a specific section.
+
+After finding a commit:
+
+git show <commit>
+
+This lets you inspect the actual change.
+
+Important:
+
+git blame does NOT mean:
+"Who is responsible for a bug?"
+
+It means:
+"Which commit last modified this line?"
+
+Mental model:
+
+git blame = "Which commit last changed this line?"

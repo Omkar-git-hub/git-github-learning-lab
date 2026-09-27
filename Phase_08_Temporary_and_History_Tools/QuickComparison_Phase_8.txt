@@ -1,0 +1,51 @@
+git stash
+→ Temporarily save unfinished changes.
+
+git cherry-pick
+→ Bring ONE specific commit to another branch.
+
+git tag
+→ Give a version/name to a specific commit.
+
+Git history investigation
+→ Understand what happened in repository history.
+
+git blame
+→ Find which commit last changed each line.
+
+git bisect
+→ Find which commit introduced a bug.
+
+
+
+
+*** Important Mental Model ***
+
+UNFINISHED WORK
+      ↓
+   git stash
+
+
+ONE SPECIFIC COMMIT NEEDED
+      ↓
+ git cherry-pick
+
+
+MARK A RELEASE/VERSION
+      ↓
+    git tag
+
+
+INVESTIGATE HISTORY
+      ↓
+ git log / show / diff
+
+
+FIND WHO/WHICH COMMIT CHANGED A LINE
+      ↓
+   git blame
+
+
+FIND WHICH COMMIT INTRODUCED A BUG
+      ↓
+   git bisect

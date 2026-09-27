@@ -1,0 +1,51 @@
+→ Using Git commands to understand what happened in a repository.
+
+Important commands:
+
+git log
+→ View commit history.
+
+git log --oneline
+→ Compact history.
+
+git log --oneline --graph --all
+→ Visualize branches and commits.
+
+git show <commit>
+→ Inspect a specific commit.
+
+git diff <commit1> <commit2>
+→ Compare two commits.
+
+git blame <file>
+→ See which commit last changed each line.
+
+git reflog
+→ Find previous local HEAD positions.
+
+Useful questions:
+
+"What changed?"
+→ git show / git diff
+
+"Who changed this line?"
+→ git blame
+
+"When was this commit created?"
+→ git log
+
+"What happened to my branch?"
+→ git reflog
+
+"How did the branches develop?"
+→ git log --graph --all
+
+Mental model:
+Git history investigation = "Find out what happened and why."
+
+
+Simple Words :
+--graph draws a text-based visual tree of branch splits and merges on the left side of the output.
+--decorate adds visible labels like branch names, tags, and HEAD pointers next to each commit.
+--all forces Git to display the history of every branch in the repository instead of only the active one.
+--oneline shrinks each commit record into a single compact line showing the short hash and message.

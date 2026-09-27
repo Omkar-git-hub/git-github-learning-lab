@@ -1,0 +1,30 @@
+→ Temporarily saves uncommitted changes.
+
+Useful when:
+→ You are working on something unfinished.
+→ You need to switch branches.
+→ You need a clean Working Directory temporarily.
+
+Save changes:
+
+git stash
+
+See stashes:
+
+git stash list
+
+Restore latest stash:
+
+git stash pop
+
+Apply stash but keep it in stash list:
+
+git stash apply
+
+Delete a stash:
+
+git stash drop
+
+Mental model:
+
+git stash = "Put my unfinished work aside temporarily."

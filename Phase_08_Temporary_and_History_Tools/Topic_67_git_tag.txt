@@ -1,0 +1,54 @@
+→ A tag gives a permanent name to a specific commit.
+
+Useful for:
+→ Releases
+→ Versions
+→ Milestones
+
+Create a tag:
+
+git tag v1.0.0
+
+List tags:
+
+git tag
+
+Show tag:
+
+git show v1.0.0
+
+Push a tag:
+
+git push origin v1.0.0
+
+Push all tags:
+
+git push origin --tags
+
+Delete local tag:
+
+git tag -d v1.0.0
+
+Delete remote tag:
+
+git push origin --delete v1.0.0
+
+Example:
+
+A → B → C
+
+             v1.0.0
+                ↓
+                C
+
+The tag points to commit C.
+
+Important:
+→ A tag normally does not move like a branch.
+→ It is commonly used to identify release versions.
+
+Mental model:
+
+branch = "Where development is moving."
+
+tag = "This commit represents a specific version."

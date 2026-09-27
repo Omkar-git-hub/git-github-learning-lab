@@ -1,0 +1,141 @@
+→ Used to find the commit that introduced a bug.
+
+It performs a binary search through commit history.
+
+Basic process:
+
+git bisect start
+
+Mark current version as bad:
+
+git bisect bad
+
+Mark a known-good commit:
+
+git bisect good <commit>
+
+Git checks out a commit between good and bad.
+
+Test the application.
+
+If the bug exists:
+
+git bisect bad
+
+If the bug does NOT exist:
+
+git bisect good
+
+Git continues narrowing the range.
+
+When finished:
+
+git bisect reset
+
+
+Example:
+
+A → B → C → D → E → F
+
+A = known good
+F = known bad
+
+Git tests commits between them.
+
+Instead of checking every commit:
+
+A
+B
+C
+D
+E
+F
+
+Git progressively narrows the search.
+
+Result:
+→ Git identifies the commit where the problem was introduced.
+
+Useful when:
+
+→ A bug existed somewhere in a long history.
+→ You don't know which commit introduced it.
+→ Manually checking every commit would take too long.
+
+Mental model:
+
+git bisect = "Find the bad commit using binary search."
+
+
+*** Example ***
+
+GIT BISECT Example 
+Think of git bisect like playing a "Guess the Number" game.
+
+Git tries to find the exact commit where the bug was introduced.
+Commit Timeline:
+a → Good
+b → Good
+c → Good
+d → Good
+e → BAD 🐛
+f → Bad
+
+Here:
+- a, b, c, d = code was working
+- e = bug was introduced
+- f = bug is still present
+
+Git bisect helps us find commit "e" without checking every commit manually.
+Basic idea:
+Good Commit → Bug-Free
+Bad Commit  → Bug Exists
+
+Git checks commits between them and asks us:
+"Is this commit Good or Bad?"
+
+Based on our answer, Git removes half of the commits
+and continues searching.
+
+Example:
+a → b → c → d → e → f
+Good             Bad
+
+Git may check:
+c → Is it good or bad?
+
+If c is Good:
+a → b → c = Good
+d → e → f = Possible Bad
+
+Git continues until it finds:
+e = First Bad Commit 🐛
+
+
+IMPORTANT COMMANDS
+
+Start bisect:
+git bisect start
+
+Mark current commit as bad:
+git bisect bad
+
+Mark a known working commit as good:
+git bisect good <commit>
+
+Git will checkout a commit for testing.
+If the tested commit is working:
+git bisect good
+
+If the bug exists:
+git bisect bad
+
+Continue until Git identifies the first bad commit.
+
+Finish bisect:
+git bisect reset
+
+
+MAIN IDEA
+git bisect = Binary search through Git history
+to find the first commit that introduced a bug.
