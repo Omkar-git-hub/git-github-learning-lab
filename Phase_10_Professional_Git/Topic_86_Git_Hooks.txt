@@ -1,0 +1,128 @@
+============================================================
+TOPIC 86 — GIT HOOKS
+============================================================
+
+1. WHAT ARE GIT HOOKS?
+------------------------------------------------------------
+
+Git hooks are scripts that Git can execute automatically
+when specific Git events occur.
+
+
+2. COMMON HOOKS
+------------------------------------------------------------
+
+pre-commit
+    Runs before a commit is created.
+
+commit-msg
+    Runs when validating a commit message.
+
+pre-push
+    Runs before pushing.
+
+post-merge
+    Runs after a merge.
+
+post-checkout
+    Runs after checkout.
+
+
+3. EXAMPLE USE
+------------------------------------------------------------
+
+A team may use a pre-commit hook to:
+
+- Run formatting
+- Run linting
+- Run tests
+- Check commit content
+
+
+4. PRE-COMMIT FLOW
+------------------------------------------------------------
+
+git commit
+    |
+    v
+pre-commit hook
+    |
+    +---- fails -> commit stops
+    |
+    +---- succeeds
+             |
+             v
+         commit created
+
+
+5. COMMIT-MSG HOOK
+------------------------------------------------------------
+
+Can validate commit message format.
+
+Example:
+
+feat: add login
+
+If the message does not follow the team's convention,
+the hook can reject the commit.
+
+
+6. PRE-PUSH HOOK
+------------------------------------------------------------
+
+Can run checks before code is pushed.
+
+Example:
+
+git push
+   |
+   v
+pre-push checks
+   |
+   v
+push
+
+
+7. HOOK LOCATION
+------------------------------------------------------------
+
+Hooks are stored inside:
+
+.git/hooks/
+
+
+8. IMPORTANT LIMITATION
+------------------------------------------------------------
+
+Hooks inside .git are local to the repository clone.
+
+They are not automatically distributed to every developer
+when the repository is cloned.
+
+Teams often use hook-management tools or project scripts
+when shared hook behavior is required.
+
+
+9. HOOKS VS GITHUB ACTIONS
+------------------------------------------------------------
+
+Git hooks:
+
+- Usually run locally
+- Trigger around local Git operations
+
+GitHub Actions:
+
+- Run on GitHub infrastructure
+- Can run after push or Pull Request events
+- Can provide shared CI checks
+
+
+10. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Git hook = local automation around Git operations.
+
+
+============================================================

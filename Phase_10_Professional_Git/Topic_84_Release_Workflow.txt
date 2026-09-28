@@ -1,0 +1,168 @@
+============================================================
+TOPIC 84 — RELEASE WORKFLOW
+============================================================
+
+1. WHAT IS A RELEASE?
+------------------------------------------------------------
+
+A release is a specific version of software made available
+to users or other systems.
+
+
+2. BASIC RELEASE FLOW
+------------------------------------------------------------
+
+Development
+     |
+     v
+Testing
+     |
+     v
+Review
+     |
+     v
+Version
+     |
+     v
+Tag
+     |
+     v
+Build
+     |
+     v
+Release
+     |
+     v
+Deploy
+
+
+3. VERSION
+------------------------------------------------------------
+
+Choose a version according to the project's versioning
+strategy.
+
+Example:
+
+v1.4.0
+
+
+4. GIT TAG
+------------------------------------------------------------
+
+A tag identifies the commit associated with a release.
+
+Example:
+
+git tag v1.4.0
+
+Push:
+
+git push origin v1.4.0
+
+
+5. GITHUB RELEASE
+------------------------------------------------------------
+
+GitHub Releases can provide:
+
+- Release name
+- Version tag
+- Release notes
+- Source code archives
+- Build artifacts
+
+
+6. RELEASE NOTES
+------------------------------------------------------------
+
+Release notes explain important changes.
+
+Example:
+
+v1.4.0
+
+Features:
+- Added password reset
+- Added profile editing
+
+Fixes:
+- Fixed login validation
+
+Changes:
+- Updated authentication service
+
+
+7. BUILD ARTIFACTS
+------------------------------------------------------------
+
+A release may contain generated files.
+
+Examples:
+
+application.zip
+app.apk
+installer.exe
+Docker image
+compiled binaries
+
+
+8. TESTING
+------------------------------------------------------------
+
+Before release, teams may run:
+
+- Unit tests
+- Integration tests
+- End-to-end tests
+- Security checks
+- Build validation
+
+
+9. DEPLOYMENT
+------------------------------------------------------------
+
+After validation, the release can be deployed.
+
+Example:
+
+Git tag
+   |
+   v
+CI/CD pipeline
+   |
+   v
+Production
+
+
+10. ROLLBACK
+------------------------------------------------------------
+
+If a release causes a serious problem, the team may:
+
+- Roll back deployment
+- Deploy a previous version
+- Release a patch
+- Disable a feature
+
+The exact rollback process depends on the deployment system.
+
+
+11. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+A release is more than creating a Git tag.
+
+It can involve:
+
+Code
++ Tests
++ Version
++ Tag
++ Build
++ Release notes
++ Artifacts
++ Deployment
+
+
+============================================================

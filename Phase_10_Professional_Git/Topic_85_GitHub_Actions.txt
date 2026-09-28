@@ -1,0 +1,195 @@
+============================================================
+TOPIC 85 — GITHUB ACTIONS
+============================================================
+
+1. WHAT IS GITHUB ACTIONS?
+------------------------------------------------------------
+
+GitHub Actions is a GitHub automation and CI/CD platform.
+
+It can automatically run tasks when repository events occur.
+
+
+2. COMMON USES
+------------------------------------------------------------
+
+GitHub Actions can:
+
+- Run tests
+- Build applications
+- Check code quality
+- Run security scans
+- Build Docker images
+- Deploy applications
+- Publish packages
+- Automate releases
+
+
+3. WORKFLOW FILE
+------------------------------------------------------------
+
+Workflows are commonly stored in:
+
+.github/workflows/
+
+
+Example:
+
+.github/workflows/ci.yml
+
+
+4. BASIC WORKFLOW
+------------------------------------------------------------
+
+A workflow commonly contains:
+
+name
+on
+jobs
+steps
+
+
+5. EXAMPLE
+------------------------------------------------------------
+
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run tests
+        run: npm test
+
+
+6. WORKFLOW
+------------------------------------------------------------
+
+A workflow is an automated process.
+
+Example:
+
+Push code
+   |
+   v
+GitHub Actions
+   |
+   v
+Checkout repository
+   |
+   v
+Install dependencies
+   |
+   v
+Run tests
+   |
+   v
+Report result
+
+
+7. JOB
+------------------------------------------------------------
+
+A job is a group of steps executed together.
+
+Example:
+
+jobs:
+  test:
+    ...
+
+  build:
+    ...
+
+
+8. STEP
+------------------------------------------------------------
+
+A step performs an individual action.
+
+Examples:
+
+- Checkout code
+- Install dependencies
+- Run tests
+- Build application
+
+
+9. TRIGGERS
+------------------------------------------------------------
+
+Workflows can run because of events such as:
+
+push
+pull_request
+workflow_dispatch
+schedule
+
+Example:
+
+on:
+  pull_request:
+
+
+10. ACTIONS
+------------------------------------------------------------
+
+An action is a reusable unit of automation.
+
+Example:
+
+uses: actions/checkout@v4
+
+
+11. SECRETS
+------------------------------------------------------------
+
+Sensitive values can be stored as GitHub Actions secrets.
+
+Example:
+
+${{ secrets.API_KEY }}
+
+Secrets should not be hard-coded into workflow files.
+
+
+12. CI/CD
+------------------------------------------------------------
+
+CI = Continuous Integration
+
+Automatically build and test changes.
+
+CD = Continuous Delivery / Deployment
+
+Automate delivery or deployment of software.
+
+
+13. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+GitHub Actions:
+
+Repository event
+       |
+       v
+Workflow
+       |
+       v
+Jobs
+       |
+       v
+Steps
+       |
+       v
+Result
+
+
+============================================================

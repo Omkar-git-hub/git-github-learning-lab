@@ -1,0 +1,131 @@
+============================================================
+TOPIC 87 — GIT LFS
+============================================================
+
+1. WHAT IS GIT LFS?
+------------------------------------------------------------
+
+Git LFS means Git Large File Storage.
+
+It is an extension for handling large files in Git-based
+projects.
+
+
+2. WHY IS IT NEEDED?
+------------------------------------------------------------
+
+Git repositories are optimized for source code and normal
+text-based project files.
+
+Large binary files can make repository history very large.
+
+Examples:
+
+- Large images
+- Videos
+- Audio files
+- Large datasets
+- Binary assets
+
+
+3. HOW GIT LFS WORKS
+------------------------------------------------------------
+
+Instead of storing the large file directly in normal Git
+objects, Git LFS stores a small pointer file in Git.
+
+The actual large file is stored through LFS storage.
+
+
+4. BASIC FLOW
+------------------------------------------------------------
+
+Working directory
+      |
+      v
+Git LFS
+      |
+      +---- pointer stored in Git
+      |
+      +---- large content stored in LFS
+
+
+5. INSTALLATION
+------------------------------------------------------------
+
+Git LFS must be installed separately.
+
+Initialize it with:
+
+git lfs install
+
+
+6. TRACKING FILES
+------------------------------------------------------------
+
+Example:
+
+git lfs track "*.psd"
+
+This creates or updates:
+
+.gitattributes
+
+
+7. CHECK TRACKED FILES
+------------------------------------------------------------
+
+Use:
+
+git lfs track
+
+
+8. ADD AND COMMIT
+------------------------------------------------------------
+
+After tracking a file:
+
+git add .
+git commit -m "chore: track large assets with Git LFS"
+
+
+9. PUSH
+------------------------------------------------------------
+
+Push normally:
+
+git push
+
+
+10. .gitattributes
+------------------------------------------------------------
+
+Git LFS tracking information is normally stored in:
+
+.gitattributes
+
+Example:
+
+*.psd filter=lfs diff=lfs merge=lfs -text
+
+
+11. IMPORTANT
+------------------------------------------------------------
+
+Git LFS is not a replacement for Git.
+
+It works together with Git to handle large files more
+efficiently.
+
+
+12. WHEN TO CONSIDER LFS
+------------------------------------------------------------
+
+Consider Git LFS when a project contains large binary
+assets that need versioning.
+
+For extremely large datasets or generated artifacts,
+external storage may be more appropriate.
+
+
+============================================================

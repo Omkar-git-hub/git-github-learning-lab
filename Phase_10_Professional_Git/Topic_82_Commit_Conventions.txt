@@ -1,0 +1,162 @@
+============================================================
+TOPIC 82 — COMMIT CONVENTIONS
+============================================================
+
+1. WHAT ARE COMMIT CONVENTIONS?
+------------------------------------------------------------
+
+Commit conventions are rules for writing consistent,
+clear commit messages.
+
+Good commit messages make Git history easier to understand.
+
+
+2. BASIC STRUCTURE
+------------------------------------------------------------
+
+A common format is:
+
+type: short description
+
+Examples:
+
+feat: add user login
+fix: resolve payment validation error
+docs: update installation guide
+test: add login tests
+refactor: simplify authentication service
+chore: update dependencies
+
+
+3. COMMON TYPES
+------------------------------------------------------------
+
+feat
+    New functionality.
+
+fix
+    Bug fix.
+
+docs
+    Documentation changes.
+
+test
+    Tests.
+
+refactor
+    Code restructuring without changing intended behavior.
+
+chore
+    Maintenance tasks.
+
+build
+    Build system or dependency changes.
+
+ci
+    Continuous integration changes.
+
+perf
+    Performance improvements.
+
+
+4. GOOD COMMIT MESSAGE
+------------------------------------------------------------
+
+Good:
+
+feat: add password reset flow
+
+fix: prevent duplicate payment requests
+
+docs: add local development setup
+
+
+5. BAD COMMIT MESSAGES
+------------------------------------------------------------
+
+Avoid vague messages such as:
+
+update
+changes
+stuff
+final
+fix
+new code
+working
+done
+
+
+6. SMALL COMMITS
+------------------------------------------------------------
+
+A commit should represent one logical change.
+
+Example:
+
+feat: add login form
+
+Then:
+
+test: add login validation tests
+
+Then:
+
+docs: document login API
+
+
+7. IMPERATIVE STYLE
+------------------------------------------------------------
+
+Many teams write commit messages in imperative style.
+
+Example:
+
+Add login form
+
+instead of:
+
+Added login form
+
+The important point is consistency with the team's convention.
+
+
+8. WHY COMMIT CONVENTIONS MATTER
+------------------------------------------------------------
+
+They improve:
+
+- Git history readability
+- Code review
+- Debugging
+- Release notes
+- Automation
+- Team communication
+
+
+9. CONVENTIONAL COMMITS
+------------------------------------------------------------
+
+A widely used convention is:
+
+type(scope): description
+
+Example:
+
+feat(auth): add OAuth login
+
+fix(payment): handle timeout response
+
+docs(api): update authentication example
+
+
+10. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+A commit message should answer:
+
+"What changed?"
+
+Clearly and briefly.
+
+
+============================================================

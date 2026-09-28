@@ -1,0 +1,173 @@
+============================================================
+TOPIC 79 — GIT FLOW
+============================================================
+
+1. WHAT IS GIT FLOW?
+------------------------------------------------------------
+
+Git Flow is a branching strategy for organizing development
+and releases in a team.
+
+It defines specific branches for different purposes.
+
+Typical branches:
+
+main
+develop
+feature/*
+release/*
+hotfix/*
+
+
+2. MAIN BRANCH
+------------------------------------------------------------
+
+main contains production-ready code.
+
+Example:
+
+main
+ |
+ A---B---C
+
+Code on main should normally be stable and releasable.
+
+
+3. DEVELOP BRANCH
+------------------------------------------------------------
+
+develop is used to combine completed features before a release.
+
+Example:
+
+main
+ |
+ A---B
+
+develop
+ |
+ A---B---C---D---E
+
+Feature branches are normally merged into develop.
+
+
+4. FEATURE BRANCH
+------------------------------------------------------------
+
+Feature branches are created for individual features.
+
+Example:
+
+feature/login
+feature/payment
+feature/user-profile
+
+Typical workflow:
+
+develop
+   |
+   +---- feature/login
+   |
+   +---- feature/payment
+
+
+5. RELEASE BRANCH
+------------------------------------------------------------
+
+A release branch is created when the project is preparing
+for a release.
+
+Example:
+
+release/v1.2.0
+
+The release branch can be used for:
+
+- Final testing
+- Bug fixes
+- Version updates
+- Documentation updates
+- Release preparation
+
+After completion, it is merged into main and usually
+back into develop.
+
+
+6. HOTFIX BRANCH
+------------------------------------------------------------
+
+A hotfix branch is used to fix an urgent production problem.
+
+Example:
+
+hotfix/payment-crash
+
+Typical flow:
+
+main
+ |
+ +---- hotfix/payment-crash
+
+
+7. BASIC GIT FLOW
+------------------------------------------------------------
+
+Typical structure:
+
+main
+  |
+  +---- develop
+          |
+          +---- feature/login
+          |
+          +---- feature/payment
+          |
+          +---- release/v1.0.0
+          
+Hotfixes can start from main.
+
+
+8. EXAMPLE
+------------------------------------------------------------
+
+Developer needs to create login functionality.
+
+1. Start from develop.
+2. Create feature/login.
+3. Implement the feature.
+4. Commit changes.
+5. Push the branch.
+6. Open a Pull Request.
+7. Review the code.
+8. Merge into develop.
+
+
+9. ADVANTAGES
+------------------------------------------------------------
+
+- Clear separation of development stages
+- Useful for scheduled releases
+- Supports parallel feature development
+- Dedicated release preparation
+- Dedicated production hotfixes
+
+
+10. LIMITATIONS
+------------------------------------------------------------
+
+Git Flow can introduce many branches and additional
+process overhead.
+
+It may be unnecessary for projects that continuously
+deploy small changes.
+
+
+11. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Git Flow is not a Git command.
+
+It is a branching and release strategy built using Git.
+
+
+============================================================

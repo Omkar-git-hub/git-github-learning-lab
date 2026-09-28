@@ -1,0 +1,146 @@
+============================================================
+TOPIC 83 — SEMANTIC VERSIONING
+============================================================
+
+1. WHAT IS SEMANTIC VERSIONING?
+------------------------------------------------------------
+
+Semantic Versioning, commonly called SemVer, is a version
+numbering system.
+
+The basic format is:
+
+MAJOR.MINOR.PATCH
+
+
+2. EXAMPLE
+------------------------------------------------------------
+
+1.4.2
+
+MAJOR = 1
+MINOR = 4
+PATCH = 2
+
+
+3. MAJOR
+------------------------------------------------------------
+
+Increase MAJOR when incompatible changes are introduced.
+
+Example:
+
+1.5.0
+   |
+   v
+2.0.0
+
+Example:
+
+An API changes from:
+
+GET /users/{id}
+
+to an incompatible format that requires clients
+to change their code.
+
+
+4. MINOR
+------------------------------------------------------------
+
+Increase MINOR when backward-compatible functionality
+is added.
+
+Example:
+
+1.4.0
+   |
+   v
+1.5.0
+
+Example:
+
+Adding a new optional API feature.
+
+
+5. PATCH
+------------------------------------------------------------
+
+Increase PATCH for backward-compatible bug fixes.
+
+Example:
+
+1.5.0
+   |
+   v
+1.5.1
+
+
+6. PRE-RELEASE VERSIONS
+------------------------------------------------------------
+
+Pre-release versions can be represented using identifiers.
+
+Examples:
+
+1.0.0-alpha
+1.0.0-beta
+1.0.0-rc.1
+
+
+7. VERSION PROGRESSION
+------------------------------------------------------------
+
+Example:
+
+1.0.0
+1.0.1
+1.0.2
+1.1.0
+1.1.1
+2.0.0
+
+
+8. GIT TAGS AND SEMVER
+------------------------------------------------------------
+
+Git tags can mark releases.
+
+Example:
+
+git tag v1.0.0
+
+The tag points to a specific commit.
+
+This creates a connection between:
+
+Git commit
+    |
+    v
+Git tag
+    |
+    v
+Software release
+
+
+9. WHY VERSIONING MATTERS
+------------------------------------------------------------
+
+Version numbers help users understand:
+
+- What release they are using
+- Whether compatibility may change
+- Which release contains a fix
+- Which release introduced functionality
+
+
+10. IMPORTANT
+------------------------------------------------------------
+
+Semantic Versioning is a versioning convention.
+
+The exact versioning policy of a project should follow
+that project's documented rules.
+
+
+============================================================

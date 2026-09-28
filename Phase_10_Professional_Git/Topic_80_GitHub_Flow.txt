@@ -1,0 +1,139 @@
+============================================================
+TOPIC 80 — GITHUB FLOW
+============================================================
+
+1. WHAT IS GITHUB FLOW?
+------------------------------------------------------------
+
+GitHub Flow is a lightweight branching workflow commonly
+used for continuous development and deployment.
+
+The basic idea is:
+
+main
+  |
+  +---- feature branch
+          |
+          +---- commits
+          |
+          +---- Pull Request
+                    |
+                    +---- review
+                    |
+                    +---- merge
+
+
+2. BASIC WORKFLOW
+------------------------------------------------------------
+
+Typical steps:
+
+1. Start from main.
+2. Create a branch.
+3. Make changes.
+4. Commit changes.
+5. Push the branch.
+6. Open a Pull Request.
+7. Review and test.
+8. Merge into main.
+9. Deploy if required.
+
+
+3. EXAMPLE
+------------------------------------------------------------
+
+Create:
+
+feature/user-login
+
+Work:
+
+feature/user-login
+      |
+      +--- commit
+      +--- commit
+      +--- commit
+
+Then:
+
+Pull Request
+      |
+      v
+main
+
+
+4. WHY USE PULL REQUESTS?
+------------------------------------------------------------
+
+Pull Requests provide:
+
+- Code review
+- Discussion
+- Automated checks
+- Change visibility
+- Collaboration
+- Documentation of the change
+
+
+5. MAIN BRANCH
+------------------------------------------------------------
+
+In GitHub Flow, main is normally kept in a deployable
+or stable state.
+
+Teams often use branch protection rules to prevent
+unreviewed direct changes.
+
+
+6. GITHUB FLOW VS GIT FLOW
+------------------------------------------------------------
+
+GitHub Flow:
+
+main
+ |
+ +--- feature
+ |
+ +--- Pull Request
+ |
+ +--- main
+
+Git Flow:
+
+main
+ |
+develop
+ |
+feature
+ |
+release
+ |
+main
+
+
+GitHub Flow generally uses fewer long-lived branches.
+
+Git Flow defines more specialized branches.
+
+
+7. WHEN IT FITS
+------------------------------------------------------------
+
+GitHub Flow is useful when:
+
+- Development is continuous
+- Features are delivered frequently
+- CI/CD is used
+- Releases happen frequently
+- Teams want a simple workflow
+
+
+8. IMPORTANT
+------------------------------------------------------------
+
+GitHub Flow is a workflow, not a Git command.
+
+GitHub Flow and Git Flow are different branching strategies.
+
+
+============================================================

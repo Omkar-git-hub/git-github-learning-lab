@@ -1,0 +1,125 @@
+============================================================
+TOPIC 81 — TRUNK-BASED DEVELOPMENT
+============================================================
+
+1. WHAT IS TRUNK-BASED DEVELOPMENT?
+------------------------------------------------------------
+
+Trunk-Based Development is a development approach where
+developers integrate changes frequently into a shared
+main branch, often called the trunk.
+
+
+2. BASIC MODEL
+------------------------------------------------------------
+
+main
+ |
+ A---B---C---D---E---F
+
+Developers frequently integrate their work into main.
+
+
+3. SHORT-LIVED BRANCHES
+------------------------------------------------------------
+
+Teams may still use branches, but they are usually
+short-lived.
+
+Example:
+
+main
+ |
+ A---B---C---D
+      \
+       feature
+          |
+          +---commit
+          |
+          +---merge
+                 |
+                 v
+main
+
+
+4. SMALL CHANGES
+------------------------------------------------------------
+
+Changes should generally be small and integrated frequently.
+
+Instead of keeping a feature branch for several weeks:
+
+Bad example:
+
+feature/payment
+ |
+ +--- many commits
+ +--- many commits
+ +--- many commits
+ +--- many commits
+
+Preferred:
+
+small change
+   |
+   +--- test
+   |
+   +--- integrate
+
+
+5. CONTINUOUS INTEGRATION
+------------------------------------------------------------
+
+Trunk-Based Development works well with CI.
+
+Every change can trigger:
+
+- Build
+- Tests
+- Static analysis
+- Security checks
+- Other automated checks
+
+
+6. FEATURE FLAGS
+------------------------------------------------------------
+
+Feature flags can allow incomplete functionality to exist
+in the codebase without exposing it to users.
+
+Example:
+
+if feature_enabled:
+    show_new_feature
+
+
+7. ADVANTAGES
+------------------------------------------------------------
+
+- Frequent integration
+- Smaller changes
+- Fewer long-lived branches
+- Earlier conflict detection
+- Works well with CI/CD
+
+
+8. CHALLENGES
+------------------------------------------------------------
+
+- Requires strong automated testing
+- Requires disciplined small changes
+- Main must remain stable
+- Teams need good CI practices
+
+
+9. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Trunk-Based Development focuses on:
+
+"Integrate small changes frequently."
+
+The trunk is usually the main shared development line.
+
+
+============================================================
