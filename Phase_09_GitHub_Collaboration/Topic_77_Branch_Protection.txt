@@ -1,0 +1,62 @@
+Topic 77 — Branch Protection
+
+→ Branch protection rules protect important branches from unsafe changes.
+
+Common protected branches:
+
+→ main
+→ develop
+→ release branches
+
+Common protection rules:
+
+→ Require Pull Request before merging
+→ Require approvals
+→ Require status checks to pass
+→ Require conversation resolution
+→ Restrict direct pushes
+→ Restrict force pushes
+
+Example:
+
+Without protection:
+
+Developer
+    ↓
+git push
+    ↓
+main
+
+With protection:
+
+Developer
+    ↓
+Feature Branch
+    ↓
+Pull Request
+    ↓
+Review
+    ↓
+Tests
+    ↓
+Approval
+    ↓
+main
+
+Benefits:
+
+→ Prevent accidental direct pushes
+→ Require code review
+→ Require automated checks
+→ Reduce unsafe changes
+→ Protect important history
+
+Important:
+
+Branch protection is configured on GitHub.
+
+The exact rules depend on repository settings.
+
+Mental model:
+
+Branch Protection = "Rules that protect important branches."

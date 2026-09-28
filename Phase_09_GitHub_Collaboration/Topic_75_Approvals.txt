@@ -1,0 +1,53 @@
+Topic 75 — PR Approvals
+
+→ An approval means a reviewer has approved the Pull Request according to the repository's rules.
+
+Typical workflow:
+
+Pull Request
+      ↓
+Code Review
+      ↓
+Approval
+      ↓
+Merge
+
+Repositories can require:
+
+→ 1 approval
+→ 2 approvals
+→ Approval from specific teams
+→ Approval from designated reviewers
+
+Example:
+
+Developer
+    ↓
+Pull Request
+    ↓
+Automated checks
+    ↓
+Reviewer
+    ↓
+Approve
+    ↓
+Merge
+
+If changes are requested:
+
+Developer
+    ↓
+Fix code
+    ↓
+Push new commit
+    ↓
+Reviewer checks again
+
+Important:
+
+Approval does not mean the code can never have problems.
+It means the reviewer has approved the changes according to the team's process.
+
+Mental model:
+
+Approval = "The reviewer has approved this PR according to the repository rules."

@@ -1,0 +1,55 @@
+Topic 73 — Pull Requests
+
+→ A Pull Request (PR) is a request to merge changes from one branch into another.
+
+Example:
+
+main
+  ↑
+  │
+feature/login
+
+Typical workflow:
+
+Issue
+  ↓
+Feature Branch
+  ↓
+Code Changes
+  ↓
+Commits
+  ↓
+Push Branch
+  ↓
+Pull Request
+  ↓
+Review
+  ↓
+Approval
+  ↓
+Merge
+
+A Pull Request allows a team to:
+
+→ Review code
+→ Discuss changes
+→ Request changes
+→ Run automated checks
+→ Approve changes
+→ Merge changes
+
+Important:
+
+Commit:
+→ Git concept.
+→ Records a change.
+
+Pull Request:
+→ GitHub collaboration concept.
+→ Proposes changes for review and merging.
+
+A PR can contain multiple commits.
+
+Mental model:
+
+Pull Request = "Here are my changes. Please review them before merging."

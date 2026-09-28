@@ -1,0 +1,50 @@
+Topic 71 — GitHub Repositories
+
+→ A GitHub repository is the remote home of a project.
+
+It can contain:
+
+→ Source code
+→ Git history
+→ Branches
+→ Tags
+→ Issues
+→ Pull Requests
+→ Releases
+→ Documentation
+→ GitHub Actions
+
+Local Repository:
+→ Repository stored on your computer.
+
+GitHub Repository:
+→ Repository hosted remotely on GitHub.
+
+Typical flow:
+
+Local Repository
+       ↓
+   git push
+       ↓
+GitHub Repository
+
+Git vs GitHub:
+
+Git:
+→ Version control system.
+→ Tracks changes and manages history.
+
+GitHub:
+→ Platform that hosts Git repositories.
+→ Provides collaboration features.
+
+Important:
+
+A GitHub repository is more than code storage.
+It also provides tools for team collaboration.
+
+Mental model:
+
+Git repository = Version history
+
+GitHub repository = Git repository + Collaboration

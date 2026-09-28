@@ -1,0 +1,66 @@
+Topic 76 — Pull Request Conflicts
+
+→ A PR conflict occurs when Git cannot automatically combine changes from the source branch with the target branch.
+
+Example:
+
+main:
+A → B → C
+
+feature:
+A → B → D
+
+If C and D modify the same part of a file,
+Git may report a conflict.
+
+Typical conflict workflow:
+
+PR shows conflict
+       ↓
+Update feature branch
+       ↓
+Resolve conflict locally
+       ↓
+Test changes
+       ↓
+Commit resolution
+       ↓
+Push branch
+       ↓
+PR updates
+
+Common commands:
+
+git fetch origin
+
+git switch feature
+
+git merge origin/main
+
+After resolving conflicts:
+
+git add <files>
+
+git commit
+
+git push
+
+Important:
+
+A conflict does not automatically mean the code is wrong.
+
+It means Git cannot safely decide how different changes should be combined.
+
+Conflict markers may look like:
+
+<<<<<<< HEAD
+Current branch changes
+=======
+Other branch changes
+>>>>>>> branch-name
+
+You must decide the correct final content and remove the conflict markers.
+
+Mental model:
+
+Conflict = "Git needs a human decision about how changes should be combined."

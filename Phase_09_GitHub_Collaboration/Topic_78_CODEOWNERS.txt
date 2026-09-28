@@ -1,0 +1,53 @@
+Topic 78 — CODEOWNERS
+
+→ CODEOWNERS defines people or teams responsible for reviewing specific parts of a repository.
+
+Common location:
+
+.github/CODEOWNERS
+
+Example:
+
+/backend/ @backend-team
+/frontend/ @frontend-team
+/docs/ @documentation-team
+
+If a Pull Request changes:
+
+/backend/login.py
+
+GitHub can request review from:
+
+@backend-team
+
+Another example:
+
+*.py @backend-team
+*.js @frontend-team
+
+CODEOWNERS is useful in large projects with multiple teams.
+
+Example teams:
+
+→ Frontend
+→ Backend
+→ DevOps
+→ Security
+→ Documentation
+
+Benefits:
+
+→ Automatically request appropriate reviewers
+→ Define ownership of code
+→ Make review responsibility clear
+→ Help maintain large repositories
+
+Important:
+
+CODEOWNERS does not write or modify the code.
+
+It defines who should review specific files or directories.
+
+Mental model:
+
+CODEOWNERS = "Who should review changes to this part of the project?"

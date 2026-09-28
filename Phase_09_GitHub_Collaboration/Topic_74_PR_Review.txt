@@ -1,0 +1,55 @@
+Topic 74 — Pull Request Review
+
+→ PR review is the process of checking proposed changes before merging them.
+
+A reviewer can:
+
+→ Read the code
+→ Add comments
+→ Suggest changes
+→ Approve the PR
+→ Request changes
+
+Reviewers commonly check:
+
+→ Correctness
+→ Code quality
+→ Readability
+→ Project conventions
+→ Tests
+→ Security
+→ Documentation
+→ Unnecessary changes
+
+Review outcomes:
+
+Approve:
+→ Reviewer accepts the changes.
+
+Request changes:
+→ Changes are required before merging.
+
+Comment:
+→ Reviewer provides feedback without necessarily approving or rejecting.
+
+Typical workflow:
+
+Developer opens PR
+       ↓
+Reviewer checks code
+       ↓
+Feedback
+       ↓
+Developer fixes code
+       ↓
+New commit pushed
+       ↓
+Reviewer checks again
+
+Important:
+
+A PR review helps detect problems before changes enter an important branch.
+
+Mental model:
+
+PR Review = "Check the proposed code before integration."

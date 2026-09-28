@@ -1,0 +1,58 @@
+Topic 72 — GitHub Issues
+
+→ Issues are used to track work in a GitHub repository.
+
+Issues can represent:
+
+→ Bugs
+→ Features
+→ Tasks
+→ Improvements
+→ Questions
+→ Documentation work
+
+Example:
+
+Title:
+Fix login validation
+
+Description:
+Login accepts an invalid password format.
+
+Common Issue features:
+
+→ Title
+→ Description
+→ Labels
+→ Assignee
+→ Milestone
+→ Comments
+
+Common labels:
+
+→ bug
+→ feature
+→ enhancement
+→ documentation
+→ good first issue
+→ help wanted
+
+Issue vs Commit:
+
+Issue:
+→ Describes what needs to be done.
+
+Commit:
+→ Records a change that was made.
+
+Issue vs Pull Request:
+
+Issue:
+→ Tracks the work.
+
+Pull Request:
+→ Proposes the implementation of that work.
+
+Mental model:
+
+Issue = Work to be done.
