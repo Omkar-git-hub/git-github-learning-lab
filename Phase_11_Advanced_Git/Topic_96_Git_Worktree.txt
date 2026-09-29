@@ -1,0 +1,141 @@
+============================================================
+TOPIC 96 — GIT WORKTREE
+============================================================
+
+1. WHAT IS GIT WORKTREE?
+------------------------------------------------------------
+
+Git worktree allows multiple working directories to be
+connected to the same Git repository.
+
+This lets you work on multiple branches simultaneously
+without repeatedly switching branches in one directory.
+
+
+2. NORMAL WORK
+------------------------------------------------------------
+
+One repository:
+
+project/
+    |
+    +--- current branch
+
+
+Switching:
+
+git switch feature/login
+
+then:
+
+git switch main
+
+
+3. WORKTREE
+------------------------------------------------------------
+
+With worktrees:
+
+project-main/
+project-login/
+project-payment/
+
+
+Each directory can have a different branch.
+
+
+4. CREATE A WORKTREE
+------------------------------------------------------------
+
+Example:
+
+git worktree add ../project-login feature/login
+
+
+This creates another working directory for feature/login.
+
+
+5. CREATE NEW BRANCH AND WORKTREE
+------------------------------------------------------------
+
+Example:
+
+git worktree add -b feature/payment ../project-payment main
+
+
+This can create:
+
+- A new branch
+- A new worktree
+- Starting from main
+
+
+6. LIST WORKTREES
+------------------------------------------------------------
+
+Use:
+
+git worktree list
+
+
+Example:
+
+/project       abc123 [main]
+/project-login def456 [feature/login]
+
+
+7. REMOVE A WORKTREE
+------------------------------------------------------------
+
+After finishing:
+
+git worktree remove ../project-login
+
+
+8. ADVANTAGES
+------------------------------------------------------------
+
+Useful when:
+
+- Comparing branches
+- Working on multiple features
+- Reviewing another branch
+- Testing a branch while keeping current work untouched
+
+
+9. IMPORTANT
+------------------------------------------------------------
+
+A worktree shares the same Git repository object database
+with the main worktree.
+
+It is not a completely independent clone.
+
+
+10. WORKTREE VS CLONE
+------------------------------------------------------------
+
+Clone:
+
+Creates another repository.
+
+Worktree:
+
+Creates another working directory connected to the same
+repository.
+
+
+11. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+One Git repository
+
+        |
+        +--- Worktree A -> main
+        |
+        +--- Worktree B -> feature/login
+        |
+        +--- Worktree C -> feature/payment
+
+
+============================================================

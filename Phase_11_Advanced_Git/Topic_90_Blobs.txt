@@ -1,0 +1,129 @@
+============================================================
+TOPIC 90 — BLOBS
+============================================================
+
+1. WHAT IS A BLOB?
+------------------------------------------------------------
+
+Blob means Binary Large Object.
+
+In Git, a blob stores the content of a file.
+
+Example:
+
+file.txt
+
+contains:
+
+Hello Git
+
+
+Git stores the file content as a blob.
+
+
+2. BLOB DOES NOT STORE THE FILENAME
+------------------------------------------------------------
+
+The blob stores content.
+
+The filename and directory relationship are stored by
+tree objects.
+
+
+3. EXAMPLE
+------------------------------------------------------------
+
+Working directory:
+
+project/
+└── hello.txt
+
+hello.txt
+    |
+    v
+Blob
+    |
+    v
+"Hello Git"
+
+
+4. TREE CONNECTS NAME TO BLOB
+------------------------------------------------------------
+
+The tree contains information similar to:
+
+hello.txt -> <blob-id>
+
+
+Therefore:
+
+Tree
+ |
+ +-- hello.txt -> Blob
+
+
+5. CREATE A BLOB
+------------------------------------------------------------
+
+A file can be converted into a Git blob object using:
+
+git hash-object <file>
+
+
+Example:
+
+git hash-object hello.txt
+
+
+6. STORE OBJECT IN GIT DATABASE
+------------------------------------------------------------
+
+Use:
+
+git hash-object -w hello.txt
+
+The -w option writes the object into Git's object database.
+
+
+7. INSPECT OBJECT TYPE
+------------------------------------------------------------
+
+git cat-file -t <blob-id>
+
+Expected:
+
+blob
+
+
+8. INSPECT CONTENT
+------------------------------------------------------------
+
+git cat-file -p <blob-id>
+
+
+9. IMPORTANT
+------------------------------------------------------------
+
+Two files with identical content can produce the same blob
+object ID.
+
+The filename can be different.
+
+Example:
+
+a.txt = Hello
+b.txt = Hello
+
+Their content can map to the same blob.
+
+
+10. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Blob = file content.
+
+Tree = filename + directory structure + references
+       to blobs and other trees.
+
+
+============================================================

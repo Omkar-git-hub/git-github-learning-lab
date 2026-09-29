@@ -1,0 +1,119 @@
+============================================================
+TOPIC 93 — REFERENCES
+============================================================
+
+1. WHAT IS A REFERENCE?
+------------------------------------------------------------
+
+A Git reference is a human-readable name that points to
+a Git object, usually a commit.
+
+
+2. COMMON REFERENCES
+------------------------------------------------------------
+
+Examples:
+
+main
+develop
+feature/login
+v1.0.0
+HEAD
+
+
+3. BRANCH REFERENCE
+------------------------------------------------------------
+
+Example:
+
+main -> abc123
+
+
+The branch name points to a commit.
+
+
+4. TAG REFERENCE
+------------------------------------------------------------
+
+Example:
+
+v1.0.0 -> abc123
+
+
+The tag identifies a specific point in history.
+
+
+5. REFERENCES ARE NOT COPIES
+------------------------------------------------------------
+
+A branch does not contain a complete copy of the project.
+
+It is essentially a movable name pointing to a commit.
+
+
+6. VIEW REFERENCES
+------------------------------------------------------------
+
+Use:
+
+git show-ref
+
+
+7. VIEW BRANCH REFERENCES
+------------------------------------------------------------
+
+Use:
+
+git branch -v
+
+
+8. VIEW TAGS
+------------------------------------------------------------
+
+Use:
+
+git tag
+
+
+9. REFS DIRECTORY
+------------------------------------------------------------
+
+Git stores references internally under areas such as:
+
+.git/refs/
+
+
+Branches may appear under:
+
+.git/refs/heads/
+
+
+Remote-tracking references may appear under:
+
+.git/refs/remotes/
+
+
+10. PACKED REFERENCES
+------------------------------------------------------------
+
+Git may store references in:
+
+.git/packed-refs
+
+Therefore, do not assume every reference will always
+appear as a separate file under .git/refs/.
+
+
+11. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Commit = object
+
+Branch = movable reference to a commit
+
+Tag = named reference to a specific point
+
+HEAD = reference describing the current checkout
+
+
+============================================================

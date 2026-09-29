@@ -1,0 +1,121 @@
+============================================================
+TOPIC 92 — COMMITS
+============================================================
+
+1. WHAT IS A COMMIT INTERNALLY?
+------------------------------------------------------------
+
+A Git commit is an object that records a snapshot of the
+project and points to the tree representing that snapshot.
+
+
+2. A COMMIT CONTAINS
+------------------------------------------------------------
+
+A commit can contain:
+
+tree
+parent
+author
+committer
+commit message
+
+
+3. EXAMPLE
+------------------------------------------------------------
+
+commit abc123...
+
+tree 456def...
+
+parent 789xyz...
+
+author Omkar <email>
+committer Omkar <email>
+
+feat: add login
+
+
+4. TREE
+------------------------------------------------------------
+
+The tree identifies the project snapshot associated with
+the commit.
+
+
+5. PARENT
+------------------------------------------------------------
+
+The parent points to the previous commit.
+
+Example:
+
+A -> B -> C
+
+Commit C has parent B.
+
+Commit B has parent A.
+
+
+6. MERGE COMMIT
+------------------------------------------------------------
+
+A merge commit can have multiple parents.
+
+Example:
+
+       B
+      / \
+A----    ----D
+      \ /
+       C
+
+D can have:
+
+parent B
+parent C
+
+
+7. INSPECT A COMMIT
+------------------------------------------------------------
+
+Use:
+
+git cat-file -p <commit-id>
+
+
+8. SHOW COMMIT
+------------------------------------------------------------
+
+Use:
+
+git show <commit-id>
+
+
+9. COMMIT GRAPH
+------------------------------------------------------------
+
+History can be viewed using:
+
+git log --oneline --graph --all
+
+
+10. COMMIT IS NOT JUST A DIFF
+------------------------------------------------------------
+
+A commit points to a complete project snapshot through
+its tree.
+
+Git can then compare snapshots to determine changes.
+
+
+11. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Commit:
+
+"At this point in history, the project looks like this,
+and this commit came after these parent commits."
+
+
+============================================================

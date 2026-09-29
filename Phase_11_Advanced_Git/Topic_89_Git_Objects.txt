@@ -1,0 +1,155 @@
+============================================================
+TOPIC 89 — GIT OBJECTS
+============================================================
+
+1. WHAT ARE GIT OBJECTS?
+------------------------------------------------------------
+
+Git stores project history using objects.
+
+The four main Git object types are:
+
+1. Blob
+2. Tree
+3. Commit
+4. Tag
+
+
+2. OBJECTS ARE STORED IN .git/OBJECTS
+------------------------------------------------------------
+
+Git stores objects inside:
+
+.git/objects/
+
+Objects are identified by their object ID (OID).
+
+Modern Git commonly uses SHA-1 object IDs, while Git also
+supports SHA-256 repositories.
+
+
+3. OBJECT ID
+------------------------------------------------------------
+
+An object gets an identifier based on its content.
+
+Example:
+
+e4b7f...
+
+The object ID allows Git to identify that exact object.
+
+
+4. BLOB
+------------------------------------------------------------
+
+A blob stores file content.
+
+A blob does NOT normally store the filename.
+
+Example:
+
+hello.txt
+    |
+    v
+blob
+    |
+    v
+"Hello Git"
+
+
+5. TREE
+------------------------------------------------------------
+
+A tree represents a directory structure.
+
+It connects:
+
+filename
+    |
+    v
+blob
+
+and can also connect:
+
+directory
+    |
+    v
+tree
+
+
+6. COMMIT
+------------------------------------------------------------
+
+A commit records a snapshot of the project and points to
+a tree.
+
+A commit also contains information such as:
+
+- Parent commit
+- Author
+- Committer
+- Message
+
+
+7. TAG OBJECT
+------------------------------------------------------------
+
+An annotated tag can be stored as a Git tag object.
+
+It can point to another Git object such as a commit.
+
+
+8. OBJECT RELATIONSHIP
+------------------------------------------------------------
+
+A simplified model:
+
+Commit
+   |
+   v
+ Tree
+  / \
+ /   \
+Blob  Tree
+      |
+      v
+     Blob
+
+
+9. IMPORTANT COMMANDS
+------------------------------------------------------------
+
+Show object type:
+
+git cat-file -t <object-id>
+
+Show object content:
+
+git cat-file -p <object-id>
+
+Show object size:
+
+git cat-file -s <object-id>
+
+
+10. HASH-BASED STORAGE
+------------------------------------------------------------
+
+Git can identify objects by their content-derived ID.
+
+This allows Git to efficiently detect identical content
+and connect history together.
+
+
+11. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Git history is not simply:
+
+"folder + list of changes"
+
+Internally, Git is a graph of objects connected by references.
+
+
+============================================================

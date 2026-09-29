@@ -1,0 +1,127 @@
+============================================================
+TOPIC 95 — DETACHED HEAD
+============================================================
+
+1. WHAT IS DETACHED HEAD?
+------------------------------------------------------------
+
+Detached HEAD means HEAD points directly to a commit instead
+of pointing to a branch.
+
+
+2. NORMAL STATE
+------------------------------------------------------------
+
+HEAD -> main -> C
+
+
+3. DETACHED STATE
+------------------------------------------------------------
+
+HEAD -> C
+
+
+There is no branch name between HEAD and the commit.
+
+
+4. HOW TO ENTER DETACHED HEAD
+------------------------------------------------------------
+
+Example:
+
+git switch --detach <commit-id>
+
+
+Older syntax:
+
+git checkout <commit-id>
+
+
+5. WHY USE DETACHED HEAD?
+------------------------------------------------------------
+
+Useful for:
+
+- Inspecting an old commit
+- Testing historical code
+- Comparing versions
+- Debugging
+- Temporarily checking a release
+
+
+6. CHANGES IN DETACHED HEAD
+------------------------------------------------------------
+
+You can create commits while detached.
+
+Example:
+
+A---B---C
+        ^
+       HEAD
+
+New commit:
+
+A---B---C---D
+        ^
+       HEAD
+
+But D is not automatically attached to a branch.
+
+
+7. IMPORTANT RISK
+------------------------------------------------------------
+
+If you leave the detached commit without creating a branch,
+the commit may eventually become difficult to find through
+normal branch references.
+
+Git's reflog can help recover it.
+
+
+8. CREATE A BRANCH FROM DETACHED HEAD
+------------------------------------------------------------
+
+Use:
+
+git switch -c recovery-branch
+
+
+Now:
+
+recovery-branch
+       |
+       v
+       D
+
+
+9. RETURN TO A BRANCH
+------------------------------------------------------------
+
+Example:
+
+git switch main
+
+
+10. CHECK STATUS
+------------------------------------------------------------
+
+Use:
+
+git status
+
+Git normally tells you when HEAD is detached.
+
+
+11. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Detached HEAD is not automatically an error.
+
+It means:
+
+"You are currently looking directly at a commit instead
+of being attached to a branch."
+
+
+============================================================

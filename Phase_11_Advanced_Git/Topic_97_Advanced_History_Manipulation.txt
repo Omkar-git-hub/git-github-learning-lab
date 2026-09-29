@@ -1,0 +1,192 @@
+============================================================
+TOPIC 97 — ADVANCED HISTORY MANIPULATION
+============================================================
+
+1. WHAT IS HISTORY MANIPULATION?
+------------------------------------------------------------
+
+History manipulation means changing how commits are arranged,
+combined, moved, or referenced.
+
+
+2. COMMON TOOLS
+------------------------------------------------------------
+
+Important commands include:
+
+git rebase
+git rebase -i
+git reset
+git cherry-pick
+git commit --amend
+git revert
+git reflog
+git filter-repo
+
+
+3. REBASE
+------------------------------------------------------------
+
+Rebase can move commits onto another base.
+
+Example:
+
+Before:
+
+A---B---C main
+     \
+      D---E feature
+
+
+After rebase:
+
+A---B---C---D'---E' feature
+
+
+The rebased commits receive new commit IDs.
+
+
+4. INTERACTIVE REBASE
+------------------------------------------------------------
+
+Use:
+
+git rebase -i <base>
+
+
+Interactive rebase can be used to:
+
+- Reorder commits
+- Squash commits
+- Edit commits
+- Reword commit messages
+- Drop commits
+
+
+5. AMEND
+------------------------------------------------------------
+
+Modify the latest commit:
+
+git commit --amend
+
+
+This creates a replacement commit with a different ID.
+
+
+6. CHERRY-PICK
+------------------------------------------------------------
+
+Copy the changes introduced by a specific commit onto the
+current branch.
+
+Example:
+
+git cherry-pick <commit-id>
+
+
+7. RESET
+------------------------------------------------------------
+
+Move the current branch reference.
+
+Example:
+
+git reset --hard <commit-id>
+
+
+Reset can rewrite local branch history.
+
+
+8. REVERT
+------------------------------------------------------------
+
+Create a new commit that reverses an earlier commit.
+
+Example:
+
+git revert <commit-id>
+
+
+This preserves the existing history.
+
+
+9. FILTERING HISTORY
+------------------------------------------------------------
+
+For advanced repository history rewriting, tools such as
+git filter-repo can be used.
+
+Common reasons include:
+
+- Removing accidentally committed sensitive files
+- Removing unwanted large files
+- Rewriting paths
+- Repository cleanup
+
+
+10. HISTORY REWRITING WARNING
+------------------------------------------------------------
+
+Rewriting published history changes commit IDs.
+
+It can affect other developers who already based work
+on the old history.
+
+
+11. FORCE PUSH
+------------------------------------------------------------
+
+After certain history rewrites, a force push may be required.
+
+A safer option is often:
+
+git push --force-with-lease
+
+
+This still requires care.
+
+
+12. SHARED BRANCHES
+------------------------------------------------------------
+
+Avoid rewriting history that other developers are actively
+using unless the team has explicitly agreed to it.
+
+
+13. RECOVERY
+------------------------------------------------------------
+
+If history was accidentally changed:
+
+git reflog
+
+
+can help locate previous positions of HEAD and branches.
+
+
+14. IMPORTANT DECISION MODEL
+------------------------------------------------------------
+
+Local unpublished history:
+
+Rebase / reset / amend may be appropriate.
+
+Shared published history:
+
+Prefer revert when the goal is to undo a change without
+rewriting existing history.
+
+
+15. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+History rewriting changes the commit graph.
+
+It does not simply "edit a file in the past."
+
+A changed commit normally receives a new identity, and
+commits based on it may also receive new identities.
+
+
+============================================================

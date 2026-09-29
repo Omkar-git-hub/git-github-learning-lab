@@ -1,0 +1,119 @@
+============================================================
+TOPIC 91 — TREES
+============================================================
+
+1. WHAT IS A TREE?
+------------------------------------------------------------
+
+A Git tree represents a directory structure.
+
+A tree connects names and permissions to Git objects.
+
+
+2. TREE CAN POINT TO:
+------------------------------------------------------------
+
+- Blob objects
+- Other tree objects
+
+
+3. EXAMPLE
+------------------------------------------------------------
+
+Project:
+
+project/
+├── README.md
+├── app.txt
+└── src/
+    └── main.py
+
+
+Git structure:
+
+Tree
+├── README.md -> Blob
+├── app.txt   -> Blob
+└── src       -> Tree
+               └── main.py -> Blob
+
+
+4. TREE AND DIRECTORIES
+------------------------------------------------------------
+
+A directory is represented using a tree.
+
+A nested directory is represented by another tree referenced
+by the parent tree.
+
+
+5. INSPECT A TREE
+------------------------------------------------------------
+
+After obtaining a tree or commit object:
+
+git cat-file -p <tree-id>
+
+
+For a commit, you can first inspect:
+
+git cat-file -p <commit-id>
+
+
+You may see:
+
+tree <tree-id>
+
+
+6. INSPECT COMMIT TREE
+------------------------------------------------------------
+
+Use:
+
+git ls-tree <commit-id>
+
+
+This shows the files and objects represented by the tree
+associated with the commit.
+
+
+7. RECURSIVE TREE
+------------------------------------------------------------
+
+Use:
+
+git ls-tree -r <commit-id>
+
+The -r option recursively displays nested directories.
+
+
+8. TREE SNAPSHOT
+------------------------------------------------------------
+
+A tree represents the structure of a project at a particular
+point in history.
+
+
+9. IMPORTANT
+------------------------------------------------------------
+
+Git does not store every directory as a separate normal
+filesystem folder inside its object database.
+
+Trees represent directory structures.
+
+
+10. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Blob:
+
+"Here is the file content."
+
+Tree:
+
+"Here is the directory structure and which objects belong
+to each name."
+
+
+============================================================

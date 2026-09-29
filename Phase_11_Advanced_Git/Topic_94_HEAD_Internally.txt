@@ -1,0 +1,141 @@
+============================================================
+TOPIC 94 — HEAD INTERNALLY
+============================================================
+
+1. WHAT IS HEAD?
+------------------------------------------------------------
+
+HEAD tells Git what the current checkout is associated with.
+
+In normal branch-based work:
+
+HEAD points to the current branch.
+
+
+2. NORMAL STATE
+------------------------------------------------------------
+
+Example:
+
+HEAD
+ |
+ v
+main
+ |
+ v
+C
+
+
+This means:
+
+HEAD -> main -> commit C
+
+
+3. .git/HEAD
+------------------------------------------------------------
+
+Git stores HEAD information in:
+
+.git/HEAD
+
+
+In a normal branch checkout, it may contain:
+
+ref: refs/heads/main
+
+
+4. SWITCHING BRANCHES
+------------------------------------------------------------
+
+If you run:
+
+git switch develop
+
+HEAD changes from:
+
+HEAD -> main
+
+to:
+
+HEAD -> develop
+
+
+5. COMMIT RESOLUTION
+------------------------------------------------------------
+
+Example:
+
+HEAD
+ |
+ v
+main
+ |
+ v
+abc123
+
+
+Git can resolve HEAD to the current commit through the
+branch reference.
+
+
+6. DETACHED HEAD
+------------------------------------------------------------
+
+HEAD can also point directly to a commit.
+
+Example:
+
+HEAD
+ |
+ v
+abc123
+
+
+This is called detached HEAD state.
+
+
+7. CHECK CURRENT HEAD
+------------------------------------------------------------
+
+Use:
+
+git status
+
+
+or:
+
+git rev-parse HEAD
+
+
+8. SHOW HEAD CONTENT
+------------------------------------------------------------
+
+On Git Bash:
+
+cat .git/HEAD
+
+
+9. SYMBOLIC REFERENCE
+------------------------------------------------------------
+
+When HEAD contains:
+
+ref: refs/heads/main
+
+HEAD is acting as a symbolic reference to the main branch.
+
+
+10. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Normal:
+
+HEAD -> branch -> commit
+
+
+Detached:
+
+HEAD -> commit
+
+
+============================================================
