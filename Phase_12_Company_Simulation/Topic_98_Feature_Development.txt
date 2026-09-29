@@ -1,0 +1,190 @@
+============================================================
+TOPIC 98 — FEATURE DEVELOPMENT
+============================================================
+
+1. OBJECTIVE
+------------------------------------------------------------
+
+Simulate how a developer works on a new feature in a
+professional Git + GitHub project.
+
+
+2. TYPICAL WORKFLOW
+------------------------------------------------------------
+
+Issue
+  |
+  v
+Create feature branch
+  |
+  v
+Develop
+  |
+  v
+Test
+  |
+  v
+Commit
+  |
+  v
+Push
+  |
+  v
+Pull Request
+  |
+  v
+Code Review
+  |
+  v
+Fix review comments
+  |
+  v
+Approval
+  |
+  v
+Merge
+  |
+  v
+Delete feature branch
+
+
+3. ISSUE
+------------------------------------------------------------
+
+An issue describes the work that needs to be completed.
+
+Example:
+
+Title:
+Add task priority feature
+
+Requirements:
+
+- User can select priority.
+- Priority can be low, medium, or high.
+- Priority must be displayed.
+- Tests must be added.
+
+
+4. FEATURE BRANCH
+------------------------------------------------------------
+
+Create a branch based on the appropriate integration branch.
+
+Example:
+
+feature/task-priority
+
+
+5. DEVELOPMENT
+------------------------------------------------------------
+
+Make small logical changes.
+
+Example:
+
+Commit 1:
+feat: add task priority field
+
+Commit 2:
+feat: display task priority
+
+Commit 3:
+test: add priority validation tests
+
+
+6. TESTING
+------------------------------------------------------------
+
+Before opening a Pull Request:
+
+- Run tests
+- Check the application
+- Review changed files
+- Check Git diff
+- Check commit history
+
+
+7. PUSH
+------------------------------------------------------------
+
+Push the feature branch to GitHub.
+
+
+8. PULL REQUEST
+------------------------------------------------------------
+
+Create a Pull Request from:
+
+feature/task-priority
+
+to:
+
+main
+
+or the team's integration branch.
+
+
+9. CODE REVIEW
+------------------------------------------------------------
+
+Reviewers may:
+
+- Approve
+- Request changes
+- Leave comments
+- Suggest improvements
+
+
+10. REVIEW CHANGES
+------------------------------------------------------------
+
+If changes are requested:
+
+1. Modify the code.
+2. Commit the changes.
+3. Push again.
+4. Pull Request updates automatically.
+5. Reviewer checks again.
+
+
+11. MERGE
+------------------------------------------------------------
+
+After required checks and approvals pass, merge the
+Pull Request according to the team's policy.
+
+
+12. CLEANUP
+------------------------------------------------------------
+
+After merging, the feature branch can usually be deleted.
+
+The main branch now contains the feature.
+
+
+13. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Issue
+  ↓
+Branch
+  ↓
+Code
+  ↓
+Commit
+  ↓
+Push
+  ↓
+Pull Request
+  ↓
+Review
+  ↓
+Checks
+  ↓
+Merge
+  ↓
+Production
+
+
+============================================================

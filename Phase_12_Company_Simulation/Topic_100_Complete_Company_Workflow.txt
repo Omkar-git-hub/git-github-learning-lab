@@ -1,0 +1,433 @@
+============================================================
+TOPIC 100 — COMPLETE COMPANY-STYLE GIT WORKFLOW
+============================================================
+
+1. OBJECTIVE
+------------------------------------------------------------
+
+This topic combines the concepts learned throughout the
+entire Git + GitHub learning path into one professional
+workflow.
+
+
+2. PROJECT
+------------------------------------------------------------
+
+Example project:
+
+Company Task Management Application
+
+
+3. TEAM
+------------------------------------------------------------
+
+Developer 1:
+Frontend
+
+Developer 2:
+Backend
+
+Developer 3:
+Testing
+
+Reviewer:
+Senior Developer
+
+Maintainer:
+Project Lead
+
+
+4. ISSUE CREATION
+------------------------------------------------------------
+
+Product requirement:
+
+"Add task priority support."
+
+Create an issue describing:
+
+- Problem
+- Requirements
+- Expected behavior
+- Acceptance criteria
+
+
+5. CREATE FEATURE BRANCH
+------------------------------------------------------------
+
+Create:
+
+feature/task-priority
+
+
+The branch starts from the appropriate integration branch.
+
+
+6. DEVELOP
+------------------------------------------------------------
+
+Developer implements the feature.
+
+Example commits:
+
+feat: add task priority model
+
+feat: add priority selector
+
+test: add task priority tests
+
+
+7. CHECK LOCAL WORK
+------------------------------------------------------------
+
+Before pushing:
+
+git status
+
+git diff
+
+git log --oneline
+
+
+8. RUN TESTS
+------------------------------------------------------------
+
+Run the project's required tests.
+
+Example:
+
+npm test
+
+or:
+
+pytest
+
+or:
+
+mvn test
+
+The actual command depends on the project.
+
+
+9. PUSH
+------------------------------------------------------------
+
+Push the feature branch to GitHub.
+
+
+10. OPEN PULL REQUEST
+------------------------------------------------------------
+
+Create:
+
+feature/task-priority
+        ↓
+      main
+
+or the project's integration branch.
+
+
+11. CI/CD
+------------------------------------------------------------
+
+GitHub Actions may automatically run:
+
+- Build
+- Unit tests
+- Integration tests
+- Linting
+- Security checks
+
+
+12. CODE REVIEW
+------------------------------------------------------------
+
+Reviewer checks:
+
+- Correctness
+- Readability
+- Architecture
+- Tests
+- Security
+- Performance
+- Documentation
+
+
+13. CHANGES REQUESTED
+------------------------------------------------------------
+
+If the reviewer requests changes:
+
+Developer:
+
+1. Updates code.
+2. Tests changes.
+3. Commits.
+4. Pushes.
+
+The Pull Request updates automatically.
+
+
+14. APPROVAL
+------------------------------------------------------------
+
+When the required review conditions are satisfied,
+the Pull Request can be approved according to repository
+rules.
+
+
+15. MERGE
+------------------------------------------------------------
+
+The Pull Request is merged according to the team's
+branching policy.
+
+
+16. DELETE FEATURE BRANCH
+------------------------------------------------------------
+
+After successful merge, the feature branch can usually
+be deleted.
+
+
+17. RELEASE
+------------------------------------------------------------
+
+When enough changes are ready:
+
+1. Prepare release.
+2. Run tests.
+3. Update version.
+4. Create Git tag.
+5. Build artifacts.
+6. Create GitHub Release.
+7. Deploy.
+
+
+18. EXAMPLE VERSION
+------------------------------------------------------------
+
+v1.4.0
+
+
+19. PRODUCTION ISSUE
+------------------------------------------------------------
+
+Suppose production has a serious bug.
+
+Create:
+
+hotfix/payment-timeout
+
+
+Fix:
+
+fix: handle payment timeout
+
+
+Test.
+
+Review.
+
+Merge.
+
+Release a patch version:
+
+v1.4.1
+
+
+20. SECURITY
+------------------------------------------------------------
+
+Throughout the workflow:
+
+Never commit:
+
+- Passwords
+- API keys
+- Private keys
+- Access tokens
+- Cloud credentials
+
+
+Use appropriate secret-management mechanisms.
+
+
+21. COMPLETE FLOW
+------------------------------------------------------------
+
+Issue
+  ↓
+Feature branch
+  ↓
+Development
+  ↓
+Commits
+  ↓
+Local testing
+  ↓
+Push
+  ↓
+Pull Request
+  ↓
+CI checks
+  ↓
+Code review
+  ↓
+Requested changes
+  ↓
+Fixes
+  ↓
+Approval
+  ↓
+Merge
+  ↓
+Delete branch
+  ↓
+Release
+  ↓
+Tag
+  ↓
+Build
+  ↓
+Deploy
+  ↓
+Monitor
+  ↓
+Hotfix if required
+
+
+22. GIT COMMANDS USED THROUGHOUT THE WORKFLOW
+------------------------------------------------------------
+
+Repository:
+
+git clone
+git status
+
+Branching:
+
+git switch
+git branch
+
+Development:
+
+git add
+git commit
+
+History:
+
+git log
+git diff
+git show
+
+Remote:
+
+git fetch
+git pull
+git push
+
+Integration:
+
+git merge
+git rebase
+
+Recovery:
+
+git restore
+git reset
+git revert
+git reflog
+
+Advanced:
+
+git stash
+git cherry-pick
+git tag
+git bisect
+git worktree
+
+
+23. PROFESSIONAL PRINCIPLES
+------------------------------------------------------------
+
+1. Keep commits logical.
+
+2. Write clear commit messages.
+
+3. Keep branches focused.
+
+4. Keep important branches protected.
+
+5. Review code before merging.
+
+6. Run automated tests.
+
+7. Do not commit secrets.
+
+8. Communicate breaking changes.
+
+9. Avoid unnecessary history rewriting on shared branches.
+
+10. Keep the main/integration branch healthy.
+
+
+24. FINAL MENTAL MODEL
+------------------------------------------------------------
+
+Git:
+
+Version control
++
+History
++
+Branches
++
+Commits
++
+Recovery
+
+
+GitHub:
+
+Collaboration
++
+Pull Requests
++
+Issues
++
+Reviews
++
+Automation
++
+Releases
+
+
+Professional workflow:
+
+Plan
+ ↓
+Branch
+ ↓
+Develop
+ ↓
+Commit
+ ↓
+Test
+ ↓
+Push
+ ↓
+Review
+ ↓
+Merge
+ ↓
+Release
+ ↓
+Deploy
+ ↓
+Maintain
+
+
+============================================================
+END OF GIT + GITHUB CLASSIC 100-TOPIC LEARNING PATH
+============================================================

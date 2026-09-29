@@ -1,0 +1,205 @@
+============================================================
+TOPIC 99 — MULTIPLE DEVELOPERS
+============================================================
+
+1. OBJECTIVE
+------------------------------------------------------------
+
+Understand how Git works when multiple developers work on
+the same project.
+
+
+2. TEAM EXAMPLE
+------------------------------------------------------------
+
+Developer A:
+Frontend
+
+Developer B:
+Backend
+
+Developer C:
+Testing
+
+All developers work with the same GitHub repository.
+
+
+3. SHARED REMOTE
+------------------------------------------------------------
+
+GitHub repository:
+
+company/project
+
+
+Each developer has a local clone.
+
+Developer A
+    |
+    v
+Local repository
+    |
+    v
+GitHub
+
+
+Developer B
+    |
+    v
+Local repository
+    |
+    v
+GitHub
+
+
+4. FEATURE BRANCHES
+------------------------------------------------------------
+
+Developer A:
+
+feature/login
+
+Developer B:
+
+feature/payment
+
+Developer C:
+
+feature/testing
+
+
+Each developer works independently.
+
+
+5. FETCH
+------------------------------------------------------------
+
+Developers can retrieve information from the remote:
+
+git fetch
+
+
+Fetch updates remote-tracking references without directly
+merging those changes into the current branch.
+
+
+6. KEEPING WORK UPDATED
+------------------------------------------------------------
+
+A developer may update their feature branch with changes
+from the target branch.
+
+The exact method depends on the team's workflow.
+
+Common approaches:
+
+merge
+rebase
+
+
+7. CONFLICTS
+------------------------------------------------------------
+
+Conflicts can happen when developers modify overlapping
+parts of the same files.
+
+
+8. CONFLICT WORKFLOW
+------------------------------------------------------------
+
+Conflict
+   |
+   v
+Understand both changes
+   |
+   v
+Choose or combine correct changes
+   |
+   v
+Test
+   |
+   v
+Stage
+   |
+   v
+Commit
+   |
+   v
+Push
+
+
+9. PULL REQUESTS
+------------------------------------------------------------
+
+Pull Requests provide a shared place for:
+
+- Code review
+- Discussion
+- Automated checks
+- Change history
+- Approval
+
+
+10. BRANCH PROTECTION
+------------------------------------------------------------
+
+Important branches can be protected.
+
+Example requirements:
+
+- Pull Request required
+- Approval required
+- CI checks required
+- Direct push restricted
+- Force push restricted
+
+
+11. COMMUNICATION
+------------------------------------------------------------
+
+Git cannot replace team communication.
+
+Developers should communicate about:
+
+- Large changes
+- Shared files
+- Breaking changes
+- Dependencies
+- Conflicts
+- Releases
+
+
+12. REMOTE-TRACKING BRANCHES
+------------------------------------------------------------
+
+Example:
+
+origin/main
+
+This represents the local remote-tracking reference for
+the remote main branch.
+
+It is not the same thing as the local main branch.
+
+
+13. IMPORTANT MENTAL MODEL
+------------------------------------------------------------
+
+Many developers:
+
+Developer A ──┐
+Developer B ──┼──> GitHub
+Developer C ──┘
+
+Each developer has:
+
+Working Directory
+      ↓
+Staging Area
+      ↓
+Local Repository
+      ↓
+Remote Repository
+
+
+============================================================
