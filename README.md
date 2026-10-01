@@ -33,6 +33,8 @@ The repository is organized into phases covering:
 
 **TaskFlow** is a sample project created to practice a real-world Git/GitHub workflow.
 
+🔗 [TaskFlow — Git Workflow Lab](https://github.com/Omkar-git-hub/taskflow-git-workflow-lab?utm_source=chatgpt.com)
+
 It includes:
 
 * Feature branches
@@ -43,7 +45,7 @@ It includes:
 * Releases and tags
 * Branch cleanup
 
-The completed project is available here:
+The completed project is also included in this repository:
 
 ```text
 Phase_12_Company_Simulation/
