@@ -1,106 +1,823 @@
-** 05/09/26
-
-- git commit --allow-empty -m "chore: initialize project"
-  → Create an empty commit without file changes.
-
-- git fetch
-  → Fetch updates from the remote repository and update
-    remote-tracking branches in the local repository.
+GIT & GITHUB LEARNING LAB
+COMMANDS USED
+=========================
 
 
-- ** git diff commands **
+============================================================
+PHASE 1 — GIT FUNDAMENTALS
+============================================================
+
+1. Initialize a Git Repository
+
+git init
+→ Create a new Git repository.
+
+
+2. Check Repository Status
+
+git status
+→ Show the current state of the Working Directory and Staging Area.
+
+
+3. Check Git Version
+
+git --version
+→ Show the installed Git version.
+
+
+
+============================================================
+PHASE 2 — COMMITS & BASIC COMMANDS
+============================================================
+
+1. Stage a File
+
+git add <file>
+→ Move a file from the Working Directory to the Staging Area.
+
+
+2. Stage All Changes
+
+git add .
+→ Stage all changes in the current directory.
+
+
+3. Create a Commit
+
+git commit -m "commit message"
+→ Save staged changes as a new commit.
+
+
+4. Create an Empty Commit
+
+git commit --allow-empty -m "chore: initialize project"
+→ Create a commit without file changes.
+
+
+5. View Commit History
+
+git log
+→ Show commit history.
+
+
+6. Compact Commit History
+
+git log --oneline
+→ Show commits in a compact format.
+
+
+7. Show a Specific Commit
+
+git show <commit>
+→ Show information about a specific commit.
+
+
+8. Ignore Files
+
+.gitignore
+→ Specify files and folders that Git should not track.
+
+
+
+============================================================
+PHASE 3 — BRANCHING
+============================================================
+
+1. List Local Branches
+
+git branch
+→ List local branches.
+
+
+2. Create a Branch
+
+git branch <branch-name>
+→ Create a new branch.
+
+
+3. Switch Branch
+
+git switch <branch-name>
+→ Switch to another branch.
+
+
+4. Create and Switch to a Branch
+
+git switch -c <branch-name>
+→ Create a new branch and switch to it.
+
+
+5. Rename the Current Branch
+
+git branch -M main
+→ Rename the current branch to main.
+
+
+6. Old Branch Switching Command
+
+git checkout <branch-name>
+→ Switch to another branch.
+
+
+
+============================================================
+PHASE 4 — MERGING & CONFLICTS
+============================================================
+
+1. Merge a Branch
+
+git merge <branch-name>
+→ Merge another branch into the current branch.
+
+
+2. Force a Merge Commit
+
+git merge --no-ff <branch-name>
+→ Create a merge commit even when fast-forward is possible.
+
+
+3. Check Merge Status
+
+git status
+→ Show files with merge conflicts.
+
+
+4. Stage Resolved Files
+
+git add <file>
+→ Mark a resolved conflict as resolved.
+
+
+5. Complete a Merge Commit
+
+git commit -m "merge: resolve conflicts"
+→ Create the merge commit after resolving conflicts.
+
+
+6. View Graphical History
+
+git log --oneline --graph --all
+→ View branches, merges, and commit history graphically.
+
+
+
+============================================================
+PHASE 5 — REBASE
+============================================================
+
+1. Rebase a Branch
+
+git rebase <branch-name>
+→ Reapply the current branch commits on top of another branch.
+
+
+2. Interactive Rebase
+
+git rebase -i HEAD~<number>
+→ Edit, reorder, squash, or modify recent commits.
+
+
+3. Continue Rebase
+
+git rebase --continue
+→ Continue a rebase after resolving conflicts.
+
+
+4. Abort Rebase
+
+git rebase --abort
+→ Cancel the current rebase operation.
+
+
+
+============================================================
+PHASE 6 — REMOTE REPOSITORIES
+============================================================
+
+1. Add a Remote
+
+git remote add origin <repository-url>
+→ Connect the local repository to a remote repository.
+
+
+2. List Remotes
+
+git remote
+→ Show configured remote names.
+
+
+3. Show Remote URLs
+
+git remote -v
+→ Show fetch and push URLs.
+
+
+4. Change Remote URL
+
+git remote set-url origin <repository-url>
+→ Change the URL of an existing remote.
+
+
+5. Fetch Remote Changes
+
+git fetch
+→ Fetch updates from the remote repository and update
+  remote-tracking branches in the local repository.
+
+
+6. Fetch from a Specific Remote
+
+git fetch origin
+→ Fetch updates from the origin remote.
+
+
+7. Push a Branch
+
+git push origin <branch-name>
+→ Push a local branch to the remote repository.
+
+
+8. Push and Set Upstream
+
+git push -u origin <branch-name>
+→ Push the branch and set its upstream branch.
+
+
+9. Pull Remote Changes
+
+git pull
+→ Fetch remote changes and integrate them into the current branch.
+
+
+10. List Remote-Tracking Branches
+
+git branch -r
+→ List remote-tracking branches.
+
+
+11. List All Branches
+
+git branch -a
+→ List local and remote-tracking branches.
+
+
+12. Show Upstream Information
+
+git branch -vv
+→ Show local branches with their upstream/remote-tracking information.
+
+
+
+============================================================
+PHASE 7 — UNDO & RECOVERY
+============================================================
+
+1. Restore a File
+
+git restore <file>
+→ Restore changes in the Working Directory.
+
+
+2. Unstage a File
+
+git restore --staged <file>
+→ Remove a file from the Staging Area.
+
+
+3. Soft Reset
+
+git reset --soft HEAD~1
+→ Remove the last commit while keeping changes staged.
+
+
+4. Mixed Reset
+
+git reset HEAD~1
+→ Remove the last commit and unstage the changes.
+
+
+5. Hard Reset
+
+git reset --hard HEAD~1
+→ Remove the last commit and discard its changes.
+
+
+6. Revert a Commit
+
+git revert <commit>
+→ Create a new commit that reverses an earlier commit.
+
+
+7. Amend the Last Commit
+
+git commit --amend
+→ Modify the most recent commit.
+
+
+8. View Reflog
+
+git reflog
+→ Show movements of HEAD and help recover previous states.
+
+
+
+============================================================
+PHASE 8 — ADVANCED GIT COMMANDS
+============================================================
+
+1. Stash Changes
+
+git stash
+→ Temporarily save uncommitted changes.
+
+
+2. List Stashes
+
+git stash list
+→ Show saved stashes.
+
+
+3. Apply a Stash
+
+git stash apply
+→ Apply stashed changes without removing the stash.
+
+
+4. Pop a Stash
+
+git stash pop
+→ Apply and remove the latest stash.
+
+
+5. Cherry-Pick a Commit
+
+git cherry-pick <commit>
+→ Apply a specific commit to the current branch.
+
+
+6. Create a Tag
+
+git tag <tag-name>
+→ Create a tag.
+
+
+7. Create an Annotated Tag
+
+git tag -a <tag-name> -m "message"
+→ Create an annotated tag.
+
+
+8. List Tags
+
+git tag
+→ Show available tags.
+
+
+9. Push a Tag
+
+git push origin <tag-name>
+→ Push a tag to the remote repository.
+
+
+10. Git Blame
+
+git blame <file>
+→ Show which commit and author last changed each line.
+
+
+11. Git Bisect
+
+git bisect start
+→ Start a binary search through commit history.
+
+
+git bisect good <commit>
+→ Mark a commit as known good.
+
+
+git bisect bad <commit>
+→ Mark a commit as known bad.
+
+
+git bisect reset
+→ End the bisect process.
+
+
+
+============================================================
+PHASE 9 — GITHUB COLLABORATION
+============================================================
+
+GitHub operations practiced:
+
+- Create GitHub repository
+- Create Issue
+- Create Pull Request
+- Review Pull Request
+- Request changes
+- Approve Pull Request
+- Resolve Pull Request conflicts
+- Merge Pull Request
+- Delete merged branches
+- Configure branch protection
+- Use CODEOWNERS
+
+
+Useful local commands:
+
+git switch -c feature/<feature-name>
+
+git add .
+
+git commit -m "feat: add feature"
+
+git push -u origin feature/<feature-name>
+
+git fetch
+
+git pull origin main
+
+
+
+============================================================
+PHASE 10 — PROFESSIONAL WORKFLOWS
+============================================================
+
+1. View Complete History
+
+git log --oneline --graph --decorate --all
+
+
+2. Create Feature Branch
+
+git switch -c feature/<feature-name>
+
+
+3. Create Bug Fix Branch
+
+git switch -c fix/<bug-name>
+
+
+4. Create Release Branch
+
+git switch -c release/<version>
+
+
+5. Create Version Tag
+
+git tag -a v1.0.0 -m "Release v1.0.0"
+
+
+6. Push Release Tag
+
+git push origin v1.0.0
+
+
+7. Push All Tags
+
+git push origin --tags
+
+
+
+============================================================
+PHASE 11 — GIT INTERNALS & HISTORY
+============================================================
+
+1. View Complete Commit Graph
+
+git log --oneline --all --graph --decorate
+
+
+2. Show Commit Details
+
+git show <commit>
+
+
+3. Compare Commits
+
+git diff <commit-A> <commit-B>
+
+
+4. Compare Branches
+
+git diff main develop
+
+
+5. Compare Local Branch with Remote-Tracking Branch
+
+git diff develop origin/develop
+
+
+6. View File History
+
+git log -- <file>
+
+
+7. View Changes for a Specific File
+
+git diff -- <file>
+
+
+
+============================================================
+PHASE 12 — COMPANY WORKFLOW SIMULATION
+============================================================
+
+PROJECT:
+TaskFlow
+
+
+1. Initialize Project
+
+git init
+
+
+2. Set Main Branch
+
+git branch -M main
+
+
+3. Add Remote Repository
+
+git remote add origin <repository-url>
+
+
+4. Push Main Branch
+
+git push -u origin main
+
+
+5. Create Feature Branch
+
+git switch -c feature/task-priority
+
+
+6. Stage Changes
+
+git add src/task_manager.txt
+
+
+7. Commit Feature
+
+git commit -m "feat: add task priority support"
+
+
+8. Add Tests
+
+git add tests/test_task_manager.txt
+
+git commit -m "test: add task priority test cases"
+
+
+9. Push Feature Branch
+
+git push -u origin feature/task-priority
+
+
+10. Create Task Status Branch
+
+git switch -c feature/task-status
+
+
+11. Merge Feature Branch
+
+git merge --no-ff feature/task-status \
+-m "merge: add task status support"
+
+
+12. Resolve Merge Conflicts
+
+git status
+
+git add src/task_manager.txt
+
+git add tests/test_task_manager.txt
+
+git commit -m "merge: combine task priority and task status"
+
+
+13. Create Release Commit
+
+git add README.md
+
+git commit -m "chore: prepare TaskFlow v1.0.0 release"
+
+
+14. Create Release Tag
+
+git tag -a v1.0.0 -m "Release v1.0.0"
+
+
+15. Push Release Tag
+
+git push origin v1.0.0
+
+
+16. Recover an Incorrect Local Commit
+
+git reset --hard HEAD~1
+
+
+17. Create Due Date Feature Branch
+
+git switch -c feature/task-due-date
+
+
+18. Commit Due Date Feature
+
+git add src/task_manager.txt
+
+git commit -m "feat: add task due date support"
+
+
+19. Commit Due Date Tests
+
+git add tests/test_task_manager.txt
+
+git commit -m "test: add due date test cases"
+
+
+20. Commit Documentation
+
+git add README.md
+
+git commit -m "docs: document task due dates"
+
+
+21. Fix Review Feedback
+
+git add tests/test_task_manager.txt
+
+git commit -m "test: validate empty task due date"
+
+
+22. Push Feature Branch
+
+git push -u origin feature/task-due-date
+
+
+23. Update Main After PR Merge
+
+git switch main
+
+git pull origin main
+
+
+24. Create v1.1.0 Release Commit
+
+git add README.md
+
+git commit -m "chore: prepare TaskFlow v1.1.0 release"
+
+
+25. Create v1.1.0 Tag
+
+git tag -a v1.1.0 -m "Release v1.1.0"
+
+
+26. Push Main
+
+git push origin main
+
+
+27. Push Release Tag
+
+git push origin v1.1.0
+
+
+28. Delete Local Feature Branches
+
+git branch -d feature/task-due-date
+
+git branch -d feature/task-priority
+
+git branch -d feature/task-status
+
+
+29. Delete Remote Feature Branches
+
+git push origin --delete feature/task-due-date
+
+git push origin --delete feature/task-priority
+
+git push origin --delete feature/task-status
+
+
+30. Remove Stale Remote-Tracking Branches
+
+git fetch --prune
+
+
+31. Check Final Branches
+
+git branch -a
+
+
+32. Check Final Repository State
+
+git status
+
+
+33. View Final Project History
+
+git log --oneline --graph --decorate --all -10
+
+
+
+============================================================
+COMMONLY USED DIFF COMMANDS
+============================================================
 
 1. Working Directory vs Last Commit
-- git diff
-  → Compare last commit with current unstaged changes.
+
+git diff
+→ Compare last commit with current unstaged changes.
+
 
 2. Staging Area vs Last Commit
-- git diff --staged
-- git diff --cached
-  → Compare last commit with staged changes.
+
+git diff --staged
+
+git diff --cached
+→ Compare last commit with staged changes.
+
 
 3. Two Commits
-- git diff A B
-  → Compare commit A with commit B.
+
+git diff A B
+→ Compare commit A with commit B.
+
 
 4. Two Branches
-- git diff main develop
-  → Compare the current states of two branches.
+
+git diff main develop
+→ Compare the current states of two branches.
+
 
 5. Local Branch vs Remote-Tracking Branch
-- git diff develop origin/develop
-  → Compare a local branch with its remote-tracking branch.
+
+git diff develop origin/develop
+→ Compare a local branch with its remote-tracking branch.
+
 
 6. Specific File
-- git diff -- README.md
-  → Show unstaged changes only for README.md.
 
-- git diff A B -- README.md
-  → Compare README.md between commit A and commit B.
-
-7. Only File Names
-- git diff --name-only
-  → Show only the names of changed files.
-
-8. Change Summary
-- git diff --stat
-  → Show a summary of changed files and line counts.
+git diff -- README.md
+→ Show unstaged changes only for README.md.
 
 
-*************************************************************************************************************************************************
+7. Specific File Between Commits
 
-** 06/09/26
+git diff A B -- README.md
+→ Compare README.md between commit A and commit B.
 
-- git status
-  → Show the current state of the Working Directory and Staging Area.
 
-- git add
-  → Move selected changes from the Working Directory to the Staging Area.
+8. Only File Names
 
-- git commit
-  → Save staged changes as a new commit in the Local Repository.
+git diff --name-only
+→ Show only the names of changed files.
 
-- git push
-  → Send local commits to the Remote Repository.
 
-- git pull
-  → Fetch remote changes and integrate them into the current local branch.
+9. Change Summary
 
-- git merge
-  → Combine changes from one branch into another branch.
+git diff --stat
+→ Show a summary of changed files and line counts.
 
-- git merge --no-ff
-  → Force a merge commit even when a fast-forward merge is possible.
 
-- git branch
-  → List or manage branches.
 
-- git branch -r
-  → List remote-tracking branches.
+============================================================
+IMPORTANT COMMAND CONCEPTS
+============================================================
 
-- git branch -a
-  → List local and remote-tracking branches.
+Working Directory
+→ Where files are currently being edited.
 
-- git branch -vv
-  → Show local branches with their upstream/remote-tracking information.
+Staging Area
+→ Changes prepared for the next commit.
 
-- git remote
-  → Manage remote repository connections.
+Local Repository
+→ Commits stored in the local .git repository.
 
-- git remote -v
-  → Show remote repository URLs.
+Remote Repository
+→ Repository hosted on GitHub or another remote server.
 
-- git log --oneline --all --graph
-  → Show a compact graphical view of commit history and branches.
+Remote-Tracking Branch
+→ Local reference representing the state of a remote branch.
 
-- git show <commit>
-  → Show information about a specific commit.
+Example:
 
-- git switch <branch>
-  → Switch to another branch.
+origin/main
 
-- git checkout <branch>
-  → Switch branches or restore files depending on usage.
+Local Branch
+→ A branch stored locally.
 
-- git restore <file>
-  → Restore changes in the Working Directory.
+Example:
+
+main
+
+Upstream Branch
+→ The remote branch tracked by a local branch.
+
+Example:
+
+main → origin/main
