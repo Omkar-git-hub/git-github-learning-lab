@@ -1,29 +1,272 @@
-ls
-→ Lists files and folders.
+GIT BASH COMMANDS
+=================
 
-ls -la
-→ Lists all files, including hidden files, with details.
 
-pwd
+1. pwd
+
 → Shows the current directory path.
 
-cd
+
+2. ls
+
+→ Lists files and folders in the current directory.
+
+
+3. ls -la
+
+→ Lists all files and folders, including hidden files,
+  with detailed information.
+
+
+4. cd <directory>
+
 → Changes the current directory.
 
-mkdir
+Example:
+
+cd project
+
+
+5. cd ..
+
+→ Moves one directory up.
+
+
+6. cd ~
+
+→ Moves to the user's home directory.
+
+
+7. mkdir <directory>
+
 → Creates a new directory.
 
-touch
+Example:
+
+mkdir project
+
+
+8. touch <file>
+
 → Creates a new empty file.
 
-rm
+Example:
+
+touch README.md
+
+
+9. rm <file>
+
 → Deletes a file.
 
-cat
-→ Displays file contents.
+Example:
 
-vi
+rm test.txt
+
+
+10. rm -r <directory>
+
+→ Deletes a directory and its contents.
+
+Example:
+
+rm -r project
+
+
+11. cat <file>
+
+→ Displays the contents of a file.
+
+Example:
+
+cat README.md
+
+
+12. vi <file>
+
 → Opens a file in the Vim editor.
 
+Example:
+
+vi README.md
+
+
+13. clear
+
+→ Clears the Git Bash terminal screen.
+
+
+14. history
+
+→ Shows previously executed commands.
+
+
+15. echo
+
+→ Displays text in the terminal or writes text to a file.
+
+Example:
+
+echo "Hello Git"
+
+
+16. cp
+
+→ Copies a file or directory.
+
+Example:
+
+cp file.txt backup.txt
+
+
+17. mv
+
+→ Moves or renames a file or directory.
+
+Example:
+
+mv old.txt new.txt
+
+
+18. grep
+
+→ Searches for text inside files.
+
+Example:
+
+grep "Git" README.md
+
+
+19. find
+
+→ Searches for files and directories.
+
+Example:
+
+find . -name "README.md"
+
+
+20. exit
+
+→ Closes the Git Bash terminal.
+
+
+============================================================
+COMMON NAVIGATION COMMANDS
+============================================================
+
+pwd
+→ Where am I?
+
+ls
+→ What is here?
+
+cd <directory>
+→ Go into a directory.
+
+cd ..
+→ Go one level back.
+
+cd ~
+→ Go to the home directory.
+
 clear
-→ Clears the terminal screen.
+→ Clean the terminal screen.
+
+
+============================================================
+FILE & DIRECTORY COMMANDS
+============================================================
+
+mkdir
+→ Create directory.
+
+touch
+→ Create file.
+
+cat
+→ Read file.
+
+cp
+→ Copy file/directory.
+
+mv
+→ Move or rename file/directory.
+
+rm
+→ Delete file.
+
+rm -r
+→ Delete directory and its contents.
+
+
+============================================================
+VIM
+============================================================
+
+vi <file>
+→ Open a file using Vim.
+
+Basic Vim modes:
+
+Normal Mode
+→ Navigate and execute commands.
+
+Insert Mode
+→ Type or edit text.
+
+Visual Mode
+→ Select text.
+
+Command Mode
+→ Save, quit, search, and execute commands.
+
+
+Common Vim commands:
+
+i
+→ Enter Insert Mode.
+
+Esc
+→ Return to Normal Mode.
+
+:w
+→ Save.
+
+:q
+→ Quit.
+
+:wq
+→ Save and quit.
+
+:q!
+→ Quit without saving.
+
+dd
+→ Delete the current line.
+
+u
+→ Undo.
+
+/
+→ Search for text.
+
+
+============================================================
+USEFUL GIT BASH SHORTCUTS
+============================================================
+
+Ctrl + C
+→ Stop the current command/process.
+
+Ctrl + L
+→ Clear the terminal screen.
+
+Tab
+→ Auto-complete file and directory names.
+
+↑
+→ Show the previous command.
+
+↓
+→ Move through command history.
